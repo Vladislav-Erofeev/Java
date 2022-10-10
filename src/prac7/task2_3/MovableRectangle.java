@@ -1,0 +1,57 @@
+/*
+ * 101
+ * This program was made by Vladislav Erofeev. IKBO-01-21
+ */
+
+package prac7.task2_3;
+
+import Prac6.task2.Movable;
+
+public class MovableRectangle implements Movable
+{
+   private MovablePoint topLeft;
+   private MovablePoint bottomRight;
+
+   public MovableRectangle(int x1, int y1, int x2, int y2, int xSpeed, int ySpeed)
+   {
+        topLeft = new MovablePoint(x1, y1, xSpeed, ySpeed);
+        bottomRight = new MovablePoint(x2, y2, xSpeed, ySpeed);
+        if (!topLeft.speedTest(bottomRight))
+        {
+            System.out.println("Скорости не равны");
+        }
+   }
+    @Override
+    public void moveUp()
+    {
+            topLeft.moveUp();
+            bottomRight.moveUp();
+            return;
+    }
+
+    @Override
+    public void moveDown()
+    {
+            topLeft.moveDown();
+            bottomRight.moveDown();
+    }
+
+    @Override
+    public void moveLeft()
+    {
+            topLeft.moveLeft();
+            bottomRight.moveLeft();
+    }
+
+    @Override
+    public void moveRight()
+    {
+            topLeft.moveRight();
+            bottomRight.moveRight();
+    }
+
+    @Override
+    public String toString() {
+        return "Top left: " + topLeft.toString() + "\n" + "Bottom right: " + bottomRight.toString();
+    }
+}
