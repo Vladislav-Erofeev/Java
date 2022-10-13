@@ -12,16 +12,11 @@ public class SortingStudentsByGPA
 
     public void quickSort(Student[] array, int low, int high) {
         if (array.length == 0)
-            return;//завершить выполнение, если длина массива равна 0
-
+            return;
         if (low >= high)
-            return;//завершить выполнение если уже нечего делить
-
-        // выбрать опорный элемент
+            return;
         int middle = low + (high - low) / 2;
         Student opora = array[middle];
-
-        // разделить на подмассивы, который больше и меньше опорного элемента
         int i = low, j = high;
         while (i <= j) {
             while (comparator.compare(array[i], opora) < 0) {
@@ -31,8 +26,7 @@ public class SortingStudentsByGPA
             while (comparator.compare(array[j], opora) > 0) {
                 j--;
             }
-
-            if (i <= j) {//меняем местами
+            if (i <= j) {
                 Student temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
@@ -40,11 +34,8 @@ public class SortingStudentsByGPA
                 j--;
             }
         }
-
-        // вызов рекурсии для сортировки левой и правой части
         if (low < j)
             quickSort(array, low, j);
-
         if (high > i)
             quickSort(array, i, high);
     }

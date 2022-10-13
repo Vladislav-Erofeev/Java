@@ -1,6 +1,4 @@
-package prac10;
-
-import java.util.Comparator;
+package prac10.task3;
 
 public class Student
 {
