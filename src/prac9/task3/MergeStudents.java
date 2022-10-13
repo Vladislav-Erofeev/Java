@@ -56,18 +56,8 @@ public class MergeStudents
 
     public Student[] sort(Student[] arrayA, Student[] arrayB)
     {
-        sortArray(arrayA);
-        sortArray(arrayB);
-        for(Student x : arrayA)
-        {
-            System.out.print(x.getIdNumber() + " ");
-        }
-        System.out.println();
-        for(Student x : arrayB)
-        {
-            System.out.print(x.getIdNumber() + " ");
-        }
-        System.out.println();
-        return mergeArray(arrayA, arrayB);
+        Student[] arrayC = sortArray(arrayA);
+        Student[] arrayD = sortArray(arrayB);
+        return mergeArray(arrayC, arrayD);
     }
 }
