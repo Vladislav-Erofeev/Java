@@ -1,3 +1,8 @@
+/*
+ * 101
+ * This program was made by Vladislav Erofeev. IKBO-01-21
+ */
+
 package prac10;
 
 import java.util.Comparator;

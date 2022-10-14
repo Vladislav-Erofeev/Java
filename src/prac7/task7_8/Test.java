@@ -5,6 +5,6 @@ public class Test
     public static void main(String[] args)
     {
         Printable[] obj = {new Book("Book 1"), new Shop("Shop 1")};
-        Shop.printMagazines(obj);
+        Book.printBooks(obj);
     }
 }
