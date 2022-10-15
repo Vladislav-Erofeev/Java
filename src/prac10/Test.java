@@ -28,7 +28,5 @@ public class Test
         obj.setComparator(groupComparator);
         obj.sort();
         obj.outArray();
-
-        //test
     }
 }
