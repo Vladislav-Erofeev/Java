@@ -6,7 +6,7 @@
 package prac13.task3;
 import java.util.StringTokenizer;
 
-public class Address {
+public class Address1 {
     private String country;
     private String region;
     private String city;
@@ -15,16 +15,15 @@ public class Address {
     private String corpus;
     private String flat;
 
-    public Address (String address)
-    {
-        String[] arr = address.split(", ");
-        country = arr[0].trim();
-        region = arr[1].trim();
-        city = arr[2].trim();
-        street = arr[3].trim();
-        house = arr[4].trim();
-        corpus = arr[5].trim();
-        flat = arr[6].trim();
+    public Address1(String address) {
+        StringTokenizer str = new StringTokenizer(address, ",.;");
+        country = str.nextToken().trim();
+        region = str.nextToken().trim();
+        city = str.nextToken().trim();
+        street = str.nextToken().trim();
+        house = str.nextToken().trim();
+        corpus = str.nextToken().trim();
+        flat = str.nextToken().trim();
     }
 
     public String toString() {

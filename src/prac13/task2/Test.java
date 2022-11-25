@@ -11,5 +11,8 @@ public class Test {
     public static void main(String[] args) {
         Person person1 = new Person("Vladislav", "Erofeev", "Sergeevich");
         System.out.println(person1);
+
+        Person person2 = new Person("Vlad");
+        System.out.println(person2);
     }
 }

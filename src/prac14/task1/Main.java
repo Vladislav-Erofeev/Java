@@ -14,11 +14,30 @@ import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Задание 1: ");
+        String[] ans1 = taskOne("test test test1 test2 gsfdh hfdh");
+        for (String x : ans1)
+            System.out.print(x + ", ");
+        System.out.println();
+
+        System.out.println("Задание 2: " + taskTwo("sdfghjkl"));
+
+        System.out.print("задание 3: ");
         String ans = "145 USDT, 34 EUU, 34 EU, 34.23 RUB, 21 USD, 12.34 EU, 23 USDD, 23 RUB";
-        boolean res = taskFive("29/02/2003");
+        System.out.println(taskThree(ans));
+
+        System.out.println("Задание 4: " + taskFour("1 + 2"));
+
+        System.out.println("Задание 5: " + taskFive("29/02/2003"));
+
+        System.out.println("Задание 6: " + taskSix("9385_32546.dfgfdhf@mail.ru"));
+
+        System.out.println("задание 7: " + taskSeven("245bjgfJhjdsfk"));
         String[] arr = {"123", "123456", "1234", "340850427", "dg"};
+        System.out.println("Задание 8: ");
         taskEight(arr);
-        taskNine("aaaaaaaaaa");
+        System.out.println("Задание 9: ");
+        taskNine("lkfjlkjdlfj;elrkg");
     }
 
     public static String[] taskOne(String str) {
