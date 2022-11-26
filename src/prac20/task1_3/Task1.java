@@ -3,9 +3,16 @@
  * This program was made by Vladislav Erofeev. IKBO-01-21
  */
 
-package prac20;
+/*
+ * 101
+ * This program was made by Vladislav Erofeev. IKBO-01-21
+ */
 
-public class Task1 <T, V, K>{
+package prac20.task1_3;
+
+import java.io.Serializable;
+
+public class Task1 <T extends Comparable, V extends Serializable, K extends Animal>{
     T field1;
     V field2;
     K field3;

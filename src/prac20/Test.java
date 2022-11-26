@@ -5,9 +5,12 @@
 
 package prac20;
 
+import prac20.task1_3.Animal;
+import prac20.task1_3.Task1;
+
 public class Test {
     public static void main(String[] args) {
-        Task1<Integer, String, Double> test = new Task1<>(4, "34", 12.23);
-        System.out.println(test.getClasses());
+
+
     }
 }
