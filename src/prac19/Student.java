@@ -73,7 +73,4 @@ public class Student {
         return temp;
     }
 
-    public String toString() {
-        return name + " " + GPA + " id: " + id;
-    }
 }

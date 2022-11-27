@@ -39,15 +39,9 @@ public class LabClassDriver {
         return dataBase.getStudentID(id);
     }
 
-    // сортировка студентов по среднему баллу
+    // установка компаратора для сортировки
     public void setComparator(Comparator comparator) {
         dataBase.setComparator(comparator);
         dataBase.sort();
-    }
-
-    public void display() {
-        for(int i = 0; i < dataBase.length(); i++) {
-            System.out.println(dataBase.get(i).toString());
-        }
     }
 }

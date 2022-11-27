@@ -16,21 +16,24 @@ import java.util.Comparator;
 import java.util.Vector;
 
 public class LabClassUI extends JFrame {
-    LabClassDriver labClassDriver;
+    LabClassDriver labClassDriver; // контроллер
 
-    private Vector<String> header = new Vector<>(0);
+    private Vector<String> header = new Vector<>(0); // заголовок таблицы
     LabClassUI(LabClassDriver driver) {
         super("Студенты");
+        // устанавливаем контроллер
         labClassDriver = driver;
+        JTable table = new JTable(labClassDriver.getTable(), header);
+        // создаём заголовок таблицы
         header.add("ID");
         header.add("name");
         header.add("group");
         header.add("GPA");
-        JTable table = new JTable(labClassDriver.getTable(), header);
-        JPanel pan1 = new JPanel();
         JTableHeader head = table.getTableHeader();
         head.setReorderingAllowed(false);
         head.setResizingAllowed(false);
+
+        JPanel pan1 = new JPanel();
         pan1.setLayout(new BoxLayout(pan1, BoxLayout.Y_AXIS));
 
         JPanel btns = new JPanel();
@@ -50,6 +53,7 @@ public class LabClassUI extends JFrame {
                 JComboBox box = (JComboBox)e.getSource();
                 labClassDriver.setComparator(sort[box.getSelectedIndex()]);
 
+                // обновление таблицы
                 DefaultTableModel dm = (DefaultTableModel)new JTable(labClassDriver.getTable(), header).getModel();
                 table.setModel(dm);
             }

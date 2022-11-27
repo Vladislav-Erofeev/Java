@@ -61,7 +61,11 @@ class HardCalculator extends JFrame{
 
         public void actionPerformed(ActionEvent e) {
             if (e.getActionCommand() == "=") {
-                text.setText(calculate());
+                try {
+                    text.setText(calculate());
+                } catch (ArithmeticException exc) {
+                    text.setText("Ошибка! Деление на ноль");
+                }
             } else if (e.getActionCommand() == "clear"){
                 text.setText("");
             } else {
@@ -69,7 +73,7 @@ class HardCalculator extends JFrame{
             }
         }
 
-        protected String calculate() {
+        protected String calculate() throws ArithmeticException{
             double answer = 0;
             StringBuilder example = new StringBuilder(text.getText());
             for(int i = 0; i < example.length(); i++) {
@@ -107,6 +111,8 @@ class HardCalculator extends JFrame{
                             ans = left*right;
                             break;
                         case '/':
+                            if (right == 0)
+                                throw new ArithmeticException();
                             ans = left/right;
                             break;
                         default:
