@@ -5,8 +5,6 @@
 
 package prac22;
 
-import prac10.SortingStudents;
-
 import java.util.Stack;
 
 public class CalculatorDriver {
