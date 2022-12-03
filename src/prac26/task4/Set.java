@@ -29,12 +29,12 @@ public class Set<T> {
         }
     }
 
-    public T get() {
+    public T get() throws SetIsEmptyException{
         Integer currentPrority = 0;
         for(;;) {
             try {
                 if(currentPrority.equals(hashTab.size()+1)) {
-                    throw new ArrayIndexOutOfBoundsException();
+                    throw new SetIsEmptyException();
                 }
                 T value = hashTab.hashtabLookup(currentPrority);
                 return value;

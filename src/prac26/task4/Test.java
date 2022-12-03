@@ -15,12 +15,17 @@ public class Test {
         stringSet.add(4, "e");
         stringSet.add(5, "f");
         stringSet.add(12, "g");
-        System.out.println(stringSet.get());
-        System.out.println(stringSet.get());
-        System.out.println(stringSet.get());
-        System.out.println(stringSet.get());
-        System.out.println(stringSet.get());
-        System.out.println(stringSet.get());
-        System.out.println(stringSet.get());
+        try {
+            System.out.println(stringSet.get());
+            System.out.println(stringSet.get());
+            System.out.println(stringSet.get());
+            System.out.println(stringSet.get());
+            System.out.println(stringSet.get());
+            System.out.println(stringSet.get());
+            System.out.println(stringSet.get());
+            System.out.println(stringSet.get());
+        } catch (SetIsEmptyException exc) {
+            System.out.println(exc.getMessage());
+        }
     }
 }
