@@ -5,53 +5,45 @@
 
 package prac21.task4;
 
-import prac14.task1.Filter;
-
-import java.io.*;
-import java.lang.reflect.Array;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        List<File> list = new ArrayList<>();
 
-        ArrayList<File> alFiles = findFiles("C:/Users/Forex//Desktop//Практики по СиАОД/");
-        for(int i = 0; i < alFiles.size() && i < 5; i++) System.out.println(alFiles.get(i).getName());
+        String path = new Scanner(System.in).nextLine();
+        path.trim();
+        // приводим путь к правильному формату
+        path = path.replace("\\", "/" );
+        path = path.replace("\"", "");
 
-        for(int i = 0; i < alFiles.size() && i < 5; i++){
-            System.out.println("!---File: " + alFiles.get(i).getName() + "---!\n");
-            System.out.println(readFile(alFiles.get(i)));
-            System.out.println();
+        getList(list, path + '/');
+
+        for(File x : list) {
+            System.out.println(x.getName());
         }
     }
+    public static void getList(List<File> files, String path) {
+        // определяем объект для каталога
+        File dir = new File(path);
+        // если объект представляет каталог
+        if(dir.isDirectory())
+        {
+            // получаем все вложенные объекты в каталоге
+            for(File item : dir.listFiles()){
+                if (files.size() == 5)
+                    return;
+                if(item.isDirectory()){
 
-    public static ArrayList<File> findFiles(String stPAth) throws IOException {
-        ArrayList<File> alFiles = new ArrayList<>();
-
-        for (Path path : Files.walk(Paths.get(stPAth)).filter(Files::isRegularFile).toList()) alFiles.add(new File(path.toUri()));
-
-        return alFiles;
-    }
-
-    public static String readFile(File file) throws FileNotFoundException {
-        InputStream inputStream = new FileInputStream(file);
-
-        String stResult = "";
-
-        try (BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))){
-            String line;
-            while ((line = bufferedReader.readLine()) != null){
-                stResult += line;
-                stResult += "\n";
+                    files.add(item);
+                }
+                else{
+                    files.add(item);
+                }
             }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
-
-        return stResult;
-
     }
 }
