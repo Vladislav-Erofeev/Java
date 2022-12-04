@@ -5,9 +5,6 @@
 
 package prac27.task2;
 
-
-import prac14.task1.Str;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
