@@ -29,6 +29,7 @@ public class vm {
     }
 
     public static void main(String[] args) {
-        calc();
+        int n = 3*3  + 4*5 + 5*6 + 6*5 + 7*6;
+        System.out.println(n);
     }
 }
