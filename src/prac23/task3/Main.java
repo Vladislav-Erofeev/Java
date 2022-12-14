@@ -13,6 +13,6 @@ public class Main  {
 
         Value n = new Add(new Subtract( new Multiply(new Variable("x"), new Variable("x")) , new Multiply(new Const(2), new Variable("x"))), new Const(1));
         System.out.println("Вычисление выражения x^2 - 2x + 1: ");
-        System.out.println(n.evaluate(1));
+        System.out.println(n.evaluate(5));
     }
 }

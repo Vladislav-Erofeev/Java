@@ -19,8 +19,7 @@ public enum DrinkTypeEnum {
     JAGERMEISTER,
     JUICE,
     COFFEE,
-    GREEN_TEA,
-    BLACK_TEA,
+    TEA,
     MILK,
     WATER,
     SODA

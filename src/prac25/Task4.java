@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class Task4 {
     public static void main(String[] args) {
         System.out.println("Test 1: " + find("(3*+*5)*–*9*×*4"));
-        System.out.println("Test 2: " + find("((3*+*5)*–*9*×*4"));
+        System.out.println("Test 2: " + find("((3*+*5)*–*9*)×*4"));
     }
 
     public static String find(String str) {

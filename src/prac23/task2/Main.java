@@ -18,7 +18,7 @@ public class Main {
             System.out.println(queue.pop());
             System.out.println(queue.pop());
             System.out.println(queue.pop());
-        } catch (IndexOutOfBoundsException exc) {
+        } catch (NullPointerException exc) {
             System.out.println("Exc");
         }
 
