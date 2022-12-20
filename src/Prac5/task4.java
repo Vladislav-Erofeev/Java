@@ -7,7 +7,7 @@ import java.io.File;
 class Animation extends JFrame {
     int WINDOW_WIDTH = 600;
     int WINDOW_HEIGHT = 600;
-    String animation_images_path = "C:/Users/Forex/IdeaProjects/test_project/src/Lesson4/pictures/";
+    String animation_images_path = "C:/Users/Forex/IdeaProjects/Java_practice/src/Prac5/pictures/";
 
     Animation() {
         super("Some shapes");
@@ -29,7 +29,7 @@ class Animation extends JFrame {
                 Image frame = Toolkit.getDefaultToolkit().getImage(file.getPath());
                 g.drawImage(frame, 0, 0, WINDOW_WIDTH, WINDOW_HEIGHT, this);
                 try {
-                    Thread.sleep(90);
+                    Thread.sleep(50);
                 } catch (InterruptedException e) {
                 }
             }

@@ -37,6 +37,6 @@ public class task1
             sum2 += arr[i];
             i++;
         } while (i < length);
-        System.out.println("Сумма 1: " + sum + "Сумма 2: " + sum1 + "Сумма 3: " + sum2);
+        System.out.println("Сумма 1: " + sum + "\nСумма 2: " + sum1 + "\nСумма 3: " + sum2);
     }
 }

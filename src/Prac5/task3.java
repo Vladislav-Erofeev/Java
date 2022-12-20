@@ -19,7 +19,7 @@ public class task3
 }
 class MyFrame extends JFrame{
     public MyFrame(){
-        setTitle("Main frame");
+        setTitle("some shapes");
         setSize(300, 200);
         MyPanel panel = new MyPanel();
         Container pane = getContentPane();
