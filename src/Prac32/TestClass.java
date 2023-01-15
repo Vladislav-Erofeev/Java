@@ -14,12 +14,12 @@ public class TestClass {
         String filename = "time.ser";
         TableOrdersManager tableOrdersManager = new TableOrdersManager(32);
         Order order = new TableOrder();
-        order.add(new Dish("Lasagna", "Tasty Italian dish", 600));
-        order.add(new Dish("Pasta", "Tasty Italian pasta", 1450));
+        order.add(new Dish("Pasta", "Real Italian Pasta", 600)) ;
+        order.add(new Dish("Pizza", "Real Italian Pizza", 800));
         tableOrdersManager.add(order,1);
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filename));
-            out.writeObject(tableOrdersManager); //Write byte stream to file system.
+            out.writeObject(tableOrdersManager);
             out.close();
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
